@@ -218,7 +218,7 @@ document.querySelector('#query-button').addEventListener('click', myFunction)
 
 // CODE HERE 
 
-const createFood = () => {
+const createFood = (e) => {
     e.preventDefault()
     const foodInput = document.querySelector('input');
     let body = {
@@ -229,9 +229,10 @@ const createFood = () => {
         console.log(res.data)
         res.data.map((el)=> {
     let heading = document.createElement('h1')
-    heading.textContent = foodInput.value;
+    heading.textContent = el;
     document.body.appendChild(heading)
-        })
+        }
+        )
     
     })
     .catch(err => console.error(err))
